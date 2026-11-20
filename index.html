@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#071b31">
+<title>Aquaria — Fishing Worlds Online</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="game-shell">
+  <canvas id="world" aria-label="Aquaria fishing world"></canvas>
+  <div class="topbar">
+    <button class="brand" id="homeBtn"><span class="brand-mark">✦</span><span><b>AQUARIA</b><small>FISHING WORLDS</small></span></button>
+    <div class="world-chip"><i></i><span id="biomeLabel">TURQUOISE WATERS</span></div>
+    <div class="wallet"><span class="gem">◆</span><b id="gemCount">120</b><small>GEMS</small></div>
+    <button class="icon-btn" id="settingsBtn" title="Settings">⚙</button>
+  </div>
+  <div class="world-note"><span id="timeLabel">☀ DAY 01</span><span>•</span><span>✦ WORLD 01</span></div>
+  <div class="quest-card"><div class="quest-icon">🎣</div><div><small>DAILY CATCH</small><b id="questText">Catch 3 fish <em id="questCount">0 / 3</em></b><div class="quest-track"><i id="questProgress"></i></div></div></div>
+  <div class="interaction-hint" id="hint"></div>
+  <div class="catch-toast" id="catchToast"></div>
+  <div class="controls">
+    <div id="moveZone" class="move-zone" aria-label="Movement joystick"><div id="joyBase" class="joy-base"><div id="joyKnob" class="joy-knob"></div></div></div>
+    <div class="action-pad">
+      <button class="control-btn action" id="actionBtn"><span>↗</span><small>ACTION</small></button>
+      <button class="control-btn jump" id="jumpBtn"><span>↑</span><small>JUMP</small></button>
+      <button class="control-btn fish" id="fishBtn"><span>🎣</span><small id="fishBtnLabel">FISH</small></button>
+    </div>
+  </div>
+  <div class="bottom-ui">
+    <div class="tool-switch"><button id="toolBtn"><span>🖐</span><small>FIST</small></button></div>
+    <div class="hotbar" id="hotbar"></div>
+    <div class="bottom-actions"><button id="bagBtn" class="round-btn">▣<small>BAG</small></button><button id="buildBtn" class="round-btn">⌂<small>BUILD</small></button></div>
+  </div>
+  <div class="orientation-badge">⤢ AUTO LAYOUT</div>
+  <section id="menuScreen" class="screen visible">
+    <div class="menu-art"><div class="sun-glow"></div><div class="menu-fish fish-a">◁</div><div class="menu-fish fish-b">◁</div><div class="menu-logo"><span>✦</span><h1>AQUARIA</h1><p>FISHING WORLDS ONLINE</p></div><div class="menu-caption">A world of wonder is just below the surface.</div></div>
+    <div class="menu-card"><div class="eyebrow">YOUR NEXT ADVENTURE</div><h2>Cast away.</h2><p>Explore four living waters, discover rare fish, and make this ocean your own.</p><button class="primary-btn" id="startBtn">START PLAYING <span>→</span></button><div class="local-note"><i></i> LOCAL WORLD · SAVED ON THIS DEVICE</div><button class="text-btn" id="continueBtn">Continue your journey</button></div>
+  </section>
+  <section id="slotsScreen" class="screen"><div class="modal-card slot-card"><button class="close-btn" data-close>×</button><div class="eyebrow">YOUR ADVENTURES</div><h2>Choose a world</h2><p class="muted">Four independent save slots · stored locally on this device</p><div id="slotList" class="slot-list"></div><button class="text-btn" data-close>Back to title</button></div></section>
+  <section id="panelScreen" class="screen"><div class="modal-card panel-card"><button class="close-btn" data-close>×</button><div id="panelContent"></div></div></section>
+  <div class="toast" id="toast"></div>
+</main>
+<script src="game.js"></script>
+</body></html>
