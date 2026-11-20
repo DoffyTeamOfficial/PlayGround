@@ -1,18 +1,42 @@
-# PlayGround
+# AQUARIA
 
-<!-- omgithub:readme:start -->
-## 🚀 Build, play, and remix with OMGithub
+A playable 2D block-based fishing sandbox for desktop and mobile browsers.
 
-**Created using [OMGithub.com](https://go.ondev.store/).**
+## Features
 
-[![OMGithub](https://img.shields.io/badge/OMGithub-Open%20project-orange?style=for-the-badge)](https://go.ondev.store/DoffyTeamOfficial/PlayGround)
-[![GitHub](https://img.shields.io/badge/GitHub-Source-181717?logo=github&style=for-the-badge)](https://github.com/DoffyTeamOfficial/PlayGround)
+- Deterministic 240×60-tile world
+- Crimson, Emerald, Crystal, and Turquoise biomes with transition zones
+- Walking, jumping, platform collision, camera follow, zoom, and mobile joystick controls
+- Fishing with biome-specific species and local catch records
+- Eight-slot hotbar, inventory, dropped items, and block placement/destruction
+- Persistent world modifications and player state
+- Tidebound vending machines and local gacha spins
+- Four independent local save slots
+- Transparent water tiles and responsive canvas rendering
 
-- 🎮 [Open the project](https://go.ondev.store/DoffyTeamOfficial/PlayGround).
-- ✨ [Remix this project](https://go.ondev.store/DoffyTeamOfficial/PlayGround?remix=1).
-- 💻 [Explore the source](https://github.com/DoffyTeamOfficial/PlayGround).
-- 🛠️ [Check build runs](https://github.com/DoffyTeamOfficial/PlayGround/actions).
-- 🐛 [Report an issue](https://github.com/DoffyTeamOfficial/PlayGround/issues).
-- 👤 [Explore the creator's projects](https://go.ondev.store/DoffyTeamOfficial).
-- 🌍 [Create with OMGithub](https://go.ondev.store/).
-<!-- omgithub:readme:end -->
+## Saves
+
+Progress is saved only in browser `localStorage` under:
+
+- `aquaria_save_0`
+- `aquaria_save_1`
+- `aquaria_save_2`
+- `aquaria_save_3`
+
+Each save stores the player position, inventory, settings, fishing records, and `worldMods` tile changes.
+
+## Unsupported
+
+- Multiplayer and networking
+- Cloud saves and account synchronization
+- Real-money purchases or server-backed prizes
+
+## Run locally
+
+Serve this directory with any static HTTP server, for example:
+
+```bash
+python3 -m http.server 4173
+```
+
+Then open `http://localhost:4173`.
