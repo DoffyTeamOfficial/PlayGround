@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <meta name="theme-color" content="#101513">
+  <title>Barber Empire — The Chair</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Barber Empire home"><span class="brand-mark">B<span>✦</span></span><span>BARBER <b>EMPIRE</b><small>YOUR CHAIR. YOUR EMPIRE.</small></span></a>
+      <div class="wallet"><span class="wallet-icon">＄</span><span id="money">$240</span><i></i><span class="rep-icon">✦</span><span id="rep">1.0</span><small>REP</small></div>
+      <button class="icon-btn" id="soundBtn" aria-label="Toggle sound">♫</button>
+    </header>
+
+    <section class="game-layout">
+      <aside class="left-panel panel">
+        <div class="eyebrow"><span class="live-dot"></span> ON THE BOOKS <span id="customerCount">01 / ∞</span></div>
+        <div class="customer-heading"><div><div class="muted">TODAY'S CLIENT</div><h1 id="customerName">Marcus Reed</h1></div><div class="avatar-mini" id="miniAvatar">MR</div></div>
+        <div class="request-card"><div class="request-title"><span>✦</span> THE LOOK THEY WANT</div><h2 id="requestTitle">Mid Fade</h2><p id="requestDetails">Keep the top long · Clean sideburns · Sharp hairline</p><div class="tag-row"><span id="styleTag">FADE</span><span id="patienceTag">● ● ● ● ○ PATIENCE</span></div></div>
+        <div class="progress-block"><div class="line-title"><span>CLIENT COMFORT</span><b id="comfortText">Feeling good</b></div><div class="meter"><span id="comfortMeter"></span></div><div class="line-title quality-title"><span>YOUR CUT QUALITY</span><b id="qualityText">Not rated yet</b></div><div class="meter quality-meter"><span id="qualityMeter"></span></div></div>
+        <div class="zone-card"><div class="zone-head"><span>HAIR MAP</span><small>LIVE LENGTH</small></div><div class="zone-grid" id="zoneGrid"></div></div>
+        <div class="tip-card"><span>✳</span><div><b>BARBER TIP</b><p id="tipText">Work the sides in short, upward strokes. Blend where lengths meet.</p></div></div>
+        <button class="finish-btn" id="finishBtn"><span>Finish this cut</span><b>→</b></button>
+      </aside>
+
+      <section class="work-area">
+        <div class="scene-top"><div class="shop-label"><span class="shop-icon">▥</span><div><b>THE CORNER CHAIR</b><small>EST. 2025&nbsp; · &nbsp;BROOKLYN, NY</small></div></div><div class="scene-actions"><span class="session-pill"><span class="live-dot"></span> IN SESSION</span><button class="zoom-btn" id="zoomBtn" title="Zoom in">⌕</button></div></div>
+        <div class="canvas-wrap" id="canvasWrap"><canvas id="scene" aria-label="Customer in barber chair. Drag your selected tool over their hair to cut."></canvas><div class="canvas-hint" id="canvasHint"><span>↖</span> DRAG TOOL OVER HAIR TO CUT</div><div class="zoom-controls"><button id="zoomOut" aria-label="Zoom out">−</button><button id="zoomIn" aria-label="Zoom in">+</button></div></div>
+        <div class="workspace-footer"><div class="tool-context"><span class="tool-context-icon" id="activeToolIcon">▰</span><div><b id="activeToolName">CLIPPER</b><small id="toolInstruction">Drag over the hair to cut</small></div></div><div class="guard-control" id="guardControl"><span>GUARD</span><button id="guardDown" aria-label="Decrease guard">−</button><b id="guardValue">#2</b><button id="guardUp" aria-label="Increase guard">+</button></div><div class="cut-meter"><span>SESSION</span><b id="sessionPercent">0%</b></div></div>
+        <nav class="tool-tray" id="toolTray" aria-label="Barber tools"></nav>
+      </section>
+
+      <aside class="right-panel panel"><div class="eyebrow">YOUR SHOP <span>LVL <b id="level">1</b></span></div><div class="shop-profile"><div class="shop-avatar">✂</div><div><b>Corner Chair</b><small>Neighborhood favorite</small></div><span class="status-pill">OPEN</span></div><div class="shop-stats"><div><small>CLIENTS</small><b id="clientStat">0</b></div><div><small>EXPERIENCE</small><b id="xpStat">0 <em>/ 100</em></b></div></div><div class="divider"></div><div class="upgrade-head"><b>SHOP UPGRADES</b><small>INVEST IN YOUR CRAFT</small></div><div id="upgradeList" class="upgrade-list"></div><div class="unlock-card"><span class="unlock-icon">✧</span><div><b>STYLE BOOK</b><p id="styleBookText">2 of 14 styles discovered</p><div class="mini-progress"><span id="styleBookMeter"></span></div></div></div><button class="save-status" id="saveStatus"><span>●</span> Progress saved locally</button></aside>
+    </section>
+    <footer class="mobile-note"><span>✦</span> Tip: Drag directly across the hair. Your cut changes each section as you work.</footer>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <div class="modal-backdrop" id="resultModal" hidden><section class="result-modal"><button class="modal-close" id="closeModal">×</button><div class="result-kicker">CHAIR REPORT</div><div class="result-score"><strong id="scoreNumber">0</strong><span>/100</span></div><h2 id="resultHeading">A fresh cut.</h2><p id="resultSummary">Your client is ready to see the new look.</p><div class="score-breakdown" id="scoreBreakdown"></div><div class="payout-row"><span>Service + tip</span><b id="payout">+$0</b></div><button class="next-btn" id="nextBtn">Next client <span>→</span></button></section></div>
+  <script src="game.js"></script>
+</body>
+</html>
